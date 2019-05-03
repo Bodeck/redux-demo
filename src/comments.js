@@ -21,7 +21,7 @@ export default function comments(state = [], action) {
     case THUMB_UP_COMMENT:
       return state.map((comment) => {
         if (comment.id === action.commentId) {
-          return Object.assign({}, comment, { votes: comment.votes++ });
+          return Object.assign({}, comment, { votes: comment.votes + 1});
         } else {
           return comment;
         }
@@ -29,7 +29,7 @@ export default function comments(state = [], action) {
     case THUMB_DOWN_COMMENT:
       return state.map((comment) => {
         if (comment.id === action.commentId) {
-          return Object.assign({}, comment, { votes: comment.votes-- });
+          return Object.assign({}, comment, { votes: comment.votes - 1 });
         } else {
           return comment;
         }

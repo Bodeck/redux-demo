@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Comment = ({text, votes}) => {
+const Comment = ({ text, votes, id, thumbUp, thumbDown }) => {
   return (
-    <li>{text} <span>votes: {votes}</span></li>
+    <li>
+      {text} <span>votes: {votes}</span>
+      <button onClick={ () => thumbUp(id) }>Thumb Up</button>
+      <button onClick={ () => thumbDown(id)}>Thumb Down</button>
+    </li>
   )
 }
 
