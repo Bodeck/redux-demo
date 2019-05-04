@@ -5,7 +5,8 @@ import { addComment } from '../actions';
 const CommentForm = ({dispatch}) => {
   let input;
   return (
-    <form onSubmit={ event => {
+    <form className = 'Comment-form' 
+      onSubmit={ event => {
       event.preventDefault();
       if (!input.value.trim()) {
         return
